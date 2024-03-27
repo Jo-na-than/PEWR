@@ -11,7 +11,7 @@ body {
 /* Styles pour le header, incluant le logo et la navigation */
 header {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -20,11 +20,12 @@ header {
 }
 
 header .logo {
-  width: 150px;
+  width: 80px;
   margin-bottom: 10px;
 }
 
 header h1 {
+  font-size: 1.5em;
   text-align: center;
   color: white;
   margin: 0;
@@ -41,6 +42,7 @@ nav a {
   text-decoration: none;
   color: #c09f51;
   margin: 0 15px;
+  
   padding: 10px 0; /* Espacement vertical pour les liens */
 }
 
@@ -107,4 +109,60 @@ footer {
   padding: 10px 0;
   position: relative;
   width: 100%;
+}
+
+
+/* Smartphones (portrait et paysage) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  /* Styles pour les smartphones */
+  header .logo {
+    width: 80px; /* Taille adaptée pour les smartphones */
+  }
+
+  header h1 {
+    font-size: 1.2em; /* Taille de police adaptée pour les smartphones */
+  }
+
+  .fiche {
+    width: 100%; /* Pleine largeur pour les fiches sur les smartphones */
+    margin: 10px 0;
+  }
+
+  .titre-formation, .detail-formation {
+    font-size: 0.9em; /* Taille de police réduite pour les détails sur les smartphones */
+  }
+}
+
+/* Tablettes (portrait et paysage) ----------- */
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) {
+  /* Styles pour les tablettes */
+  header .logo {
+    width: 120px; /* Taille du logo ajustée pour les tablettes */
+  }
+
+  header h1 {
+    font-size: 1.8em; /* Taille de police ajustée pour les tablettes */
+  }
+
+  .fiche {
+    width: calc(50% - 20px); /* Deux fiches par ligne pour les tablettes */
+    margin: 10px;
+  }
+}
+
+/* Ordinateurs de bureau et grands écrans ----------- */
+@media only screen and (min-width: 1025px) {
+  /* Styles pour les ordinateurs de bureau et grands écrans */
+  header .logo {
+    width: 150px; /* Taille du logo pour les ordinateurs de bureau */
+  }
+
+  header h1 {
+    font-size: 2.5em; /* Taille de police pour les ordinateurs de bureau */
+  }
+
+  .fiche {
+    width: calc(25% - 20px); /* Quatre fiches par ligne sur les grands écrans */
+    margin: 10px;
+  }
 }
