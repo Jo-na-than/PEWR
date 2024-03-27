@@ -1,0 +1,151 @@
+/* Styles généraux pour le corps de la page */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #fff;
+  background-color: #13131b;
+  margin: 0;
+  padding: 0;
+}
+
+/* Styles pour le header, incluant le logo et la navigation */
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: #202020;
+  padding: 10px 0;
+  margin-bottom: 15px;
+}
+
+header .logo {
+  width: 150px;
+  margin-bottom: 10px;
+}
+
+header h1 {
+  text-align: center;
+  color: white;
+  margin: 0;
+}
+
+/* Styles ajustés pour nav maintenant qu'il est en dehors de header */
+nav {
+  background-color: #333333; /* Couleur de fond pour la barre de navigation */
+  text-align: center;
+  padding: 10px 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #c09f51;
+  margin: 0 15px;
+  padding: 10px 0; /* Espacement vertical pour les liens */
+}
+
+nav a:hover {
+  background-color: #c09f51;
+  color: #13131b;
+}
+
+
+/* Configuration du main content pour aligner section et aside */
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+section {
+  width: 60%;
+  padding: 10px;
+  text-align: justify;
+}
+
+aside {
+  width: 30%;
+  padding: 10px;
+  background-color: #202020;
+  border-radius: 5px;
+}
+
+/* Styles pour l'aside contenant la carte et les coordonnées */
+aside .map {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Centrage de la section du formulaire */
+section:last-of-type {
+  width: 60%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #252525;
+  border-radius: 5px;
+  text-align: justify;
+}
+
+/* Styles spécifiques pour le formulaire */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form div, form button[type="submit"] {
+  width: 100%;
+  max-width: 500px;
+}
+
+/* Styles pour les champs du formulaire */
+form input[type="text"],
+form input[type="email"],
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #333333;
+  background-color: #202020;
+  color: #fff;
+}
+
+/* Styles pour le bouton d'envoi */
+form button[type="submit"] {
+  background-color: #c09f51;
+  color: #13131b;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button[type="submit"]:hover {
+  background-color: #af8c41;
+}
+
+/* Styles pour le footer */
+footer {
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  width: 100%;
+  background-color: #202020;
+  margin-top: 15px;
+}
+
+/* Réponse pour les dispositifs mobiles */
+@media (max-width: 800px) {
+  .main-content, section, aside {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  section:last-of-type, aside {
+    margin: 10px 0;
+  }
+}

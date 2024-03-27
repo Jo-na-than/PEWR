@@ -1,0 +1,85 @@
+/* Styles généraux pour le corps de la page */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #fff;
+  background-color: #13131b;
+  margin: 0;
+  padding: 0;
+}
+
+/* Styles pour le header, incluant le logo et la navigation */
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: #202020;
+  padding: 10px 0;
+  margin-bottom: 15px;
+}
+
+header .logo {
+  width: 150px;
+  margin-bottom: 10px;
+}
+
+header h1 {
+  text-align: center;
+  color: white;
+  margin: 0;
+}
+
+/* Styles ajustés pour nav maintenant qu'il est en dehors de header */
+nav {
+  background-color: #333333; /* Couleur de fond pour la barre de navigation */
+  text-align: center;
+  padding: 10px 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #c09f51;
+  margin: 0 15px;
+  padding: 10px 0; /* Espacement vertical pour les liens */
+}
+
+nav a:hover {
+  background-color: #c09f51;
+  color: #13131b;
+}
+
+/* Styles pour la section principale */
+section {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Styles des fiches dans la section */
+.fiche {
+  background-color: #252525;
+  color: #ffffff;
+  margin: 10px;
+  padding: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  flex-basis: calc(25% - 20px);
+  display: inline-block;
+}
+
+/* Responsive design pour les fiches */
+@media (max-width: 800px) {
+  .fiche {
+    flex-basis: calc(50% - 20px);
+  }
+}
+
+/* Styles pour le footer */
+footer {
+  background-color: #202020;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  width: 100%;
+}
