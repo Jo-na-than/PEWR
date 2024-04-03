@@ -162,3 +162,17 @@ footer .logo {
 		margin: 10px 0;
 	}
 }
+/* Requêtes média pour les tailles d'écran spécifiques */
+@media (min-width: 600px) {
+	.main-content {
+		flex-direction: row; /* Retour à la disposition en ligne pour les écrans plus grands */
+	}
+	/* Adaptations supplémentaires pour les éléments au besoin */
+}
+
+@media (min-width: 801px) {
+	footer {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+}
