@@ -61,6 +61,10 @@ section {
 	text-align: justify;
 }
 
+section a {
+	color: #c09f51;
+}
+
 aside {
 	width: 30%;
 	padding: 10px;
