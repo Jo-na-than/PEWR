@@ -6,6 +6,7 @@ body {
 	background-color: #13131b;
 	margin: 0;
 	padding: 0;
+	line-height: 1.5; /* Espacement entre les lignes */
 }
 
 /* Styles pour le header, incluant le logo et la navigation */
@@ -52,6 +53,7 @@ nav a:hover {
 /* Configuration du main content pour aligner section et aside */
 .main-content {
 	display: flex;
+	flex-direction: column;
 	justify-content: space-between;
 	padding: 15px;
 }
