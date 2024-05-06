@@ -6,10 +6,10 @@ body {
 	background-color: #13131b;
 	margin: 0;
 	padding: 0;
-	line-height: 1.5; /* Espacement entre les lignes */
+	line-height: 1.5;
 }
 
-/* Styles pour le header, incluant le logo et la navigation */
+/* Styles pour le header */
 header {
 	display: flex;
 	flex-direction: row;
@@ -31,9 +31,9 @@ header h1 {
 	margin: 0;
 }
 
-/* Styles ajustés pour nav maintenant qu'il est en dehors de header */
+/* Styles ajustés pour nav */
 nav {
-	background-color: #333333; /* Couleur de fond pour la barre de navigation */
+	background-color: #333333;
 	text-align: center;
 	padding: 10px 0;
 }
@@ -42,7 +42,7 @@ nav a {
 	text-decoration: none;
 	color: #c09f51;
 	margin: 0 15px;
-	padding: 10px 0; /* Espacement vertical pour les liens */
+	padding: 10px 0;
 }
 
 nav a:hover {
@@ -52,127 +52,124 @@ nav a:hover {
 
 /* Configuration du main content pour aligner section et aside */
 .main-content {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto auto;
+	gap: 15px;
 	padding: 15px;
-}
-
-section {
-	width: 60%;
-	padding: 10px;
-	text-align: justify;
-}
-
-aside {
-	width: 30%;
-	padding: 10px;
-	background-color: #202020;
-	border-radius: 5px;
-}
-
-/* Styles pour l'aside contenant la carte et les coordonnées */
-aside .map {
-	width: 100%;
-	max-width: 100%;
-	height: auto;
-}
-
-/* Centrage de la section du formulaire */
-section:last-of-type {
-	width: 60%;
-	margin: 0 auto;
-	padding: 20px;
-	background-color: #252525;
-	border-radius: 5px;
-	text-align: justify;
-}
-
-/* Styles spécifiques pour le formulaire */
-form {
-	display: flex;
-	flex-direction: column;
 	align-items: center;
 }
 
-form div,
-form button[type='submit'] {
-	width: 100%;
-	max-width: 500px;
-}
-
-/* Styles pour les champs du formulaire */
-form input[type='text'],
-form input[type='email'],
-form textarea {
-	width: 100%;
-	padding: 10px;
-	margin-bottom: 15px;
-	border: 1px solid #333333;
+/* Assurer que la section et l'aside aient la même largeur */
+.content-section {
 	background-color: #202020;
-	color: #fff;
-}
-
-/* Styles pour le bouton d'envoi */
-form button[type='submit'] {
-	background-color: #c09f51;
-	color: #13131b;
-	padding: 10px 20px;
-	border: none;
+	padding: 15px;
 	border-radius: 5px;
-	cursor: pointer;
-	transition: background-color 0.3s;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
-form button[type='submit']:hover {
-	background-color: #af8c41;
+/* Aside with the map on the right and text to the left */
+.content-aside {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start; /* Align content at the top */
+	background-color: #202020;
+	padding: 15px;
+	border-radius: 5px;
+	gap: 15px;
 }
 
+/* The textual information to the left */
+.content-aside .info {
+	flex: 1; /* Take up remaining space */
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+/* The map image to the right */
+.content-aside .map {
+	width: 50%; /* Set a relative width for the map */
+	max-width: 400px; /* Maximum width */
+	height: auto;
+	margin: 0; /* Align with the other content */
+}
+
+/* Partner logos */
+.partner-logo {
+	width: 150px;
+	height: 150px;
+	object-fit: contain;
+	border-radius: 5px;
+	background-color: #202020;
+}
+
+/* Styles pour la grille des partenaires */
+.carousel-inner {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr); /* 4 colonnes */
+	gap: 15px; /* Espacement entre les items */
+	align-items: center;
+	justify-items: center;
+}
+
+.carousel-item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Styles spécifiques pour le footer */
 footer {
 	display: flex;
 	align-items: center;
-	justify-content: space-between; /* Garde le texte et le logo aux extrémités opposées */
+	justify-content: space-between;
 	color: #fff;
-	text-align: center; /* Centre le texte à l'intérieur du <p> */
+	text-align: center;
 	padding: 10px 20px;
 	background-color: #202020;
 }
 
 footer p {
-	flex-grow: 1; /* Fait en sorte que le <p> occupe tout l'espace disponible */
-	margin: 0; /* Élimine les marges par défaut du <p> pour un meilleur contrôle */
-	text-align: center; /* Centre le texte à l'intérieur du paragraphe */
+	flex-grow: 1;
+	margin: 0;
+	text-align: center;
 }
 
-/* Assurez-vous que le style du logo reste inchangé */
 footer .logo {
-	width: 100px; /* Ou une autre taille appropriée */
-	height: auto; /* Pour maintenir le ratio d'aspect */
+	width: 100px;
+	height: auto;
 }
 
-/* Réponse pour les dispositifs mobiles */
+/* Adaptation pour les écrans mobiles */
 @media (max-width: 800px) {
-	.main-content,
-	section,
-	aside {
-		flex-direction: column;
-		width: 100%;
-	}
-
-	section:last-of-type,
-	aside {
-		margin: 10px 0;
-	}
-}
-/* Requêtes média pour les tailles d'écran spécifiques */
-@media (min-width: 600px) {
 	.main-content {
-		flex-direction: row; /* Retour à la disposition en ligne pour les écrans plus grands */
+		grid-template-columns: 1fr;
+		grid-template-rows: auto auto;
+		gap: 10px;
+		align-items: start;
 	}
-	/* Adaptations supplémentaires pour les éléments au besoin */
+
+	.content-aside {
+		flex-direction: column;
+	}
+
+	.content-aside .map {
+		width: 100%; /* Make the map full width on smaller screens */
+	}
 }
 
+/* Adaptation pour les écrans plus grands */
 @media (min-width: 801px) {
+	.main-content {
+		grid-template-columns: 1fr;
+		grid-template-rows: auto auto;
+		gap: 15px;
+		align-items: center;
+	}
+
 	footer {
 		flex-direction: row;
 		justify-content: space-between;
