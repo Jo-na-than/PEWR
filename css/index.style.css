@@ -60,6 +60,17 @@ nav a:hover {
 	align-items: center;
 }
 
+/* Assurez-vous que cette classe a la même couleur que la section */
+aside {
+	background-color: #202020;
+	padding: 15px;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 15px;
+}
+
 /* Assurer que la section et l'aside aient la même largeur */
 .content-section {
 	background-color: #202020;
@@ -68,6 +79,11 @@ nav a:hover {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+}
+
+.logo-qualiopi {
+	width: auto;
+	height: auto;
 }
 
 /* Aside with the map on the right and text to the left */
@@ -87,6 +103,7 @@ nav a:hover {
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
+	background-color: #202020;
 }
 
 /* The map image to the right */
@@ -95,6 +112,13 @@ nav a:hover {
 	max-width: 400px; /* Maximum width */
 	height: auto;
 	margin: 0; /* Align with the other content */
+}
+
+aside .map-iframe {
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+	border: 0;
 }
 
 /* Partner logos */
@@ -139,7 +163,8 @@ footer p {
 }
 
 footer .logo {
-	width: 100px;
+	width: 150px;
+	height: 150px;
 	height: auto;
 }
 
