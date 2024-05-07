@@ -129,20 +129,28 @@ form button[type='submit']:hover {
 	background-color: #af8c41;
 }
 
+/* footer */
 footer {
 	display: flex;
+	flex-direction: column;
 	align-items: center;
-	justify-content: space-between; /* Garde le texte et le logo aux extrémités opposées */
+	justify-content: center;
 	color: #fff;
-	text-align: center; /* Centre le texte à l'intérieur du <p> */
-	padding: 10px 20px;
+	padding: 20px 15px; /* Réduit l'espace autour du footer */
 	background-color: #202020;
+	width: 100%; /* Utilise toute la largeur disponible */
+	max-width: 100%; /* Limite maximale de la largeur */
+	border-top: 2px solid #c09f51; /* Bordure dorée */
+	gap: 10px; /* Réduit l'espacement entre les éléments */
 }
 
+/* Centrer et justifier les paragraphes dans le footer */
 footer p {
-	flex-grow: 1; /* Fait en sorte que le <p> occupe tout l'espace disponible */
-	margin: 0; /* Élimine les marges par défaut du <p> pour un meilleur contrôle */
-	text-align: center; /* Centre le texte à l'intérieur du paragraphe */
+	margin: 0;
+	text-align: center; /* Centre le texte dans chaque paragraphe */
+	width: 100%;
+	max-width: 100%; /* Utilise toute la largeur disponible */
+	line-height: 1.3; /* Réduit la hauteur de ligne pour les paragraphes */
 }
 
 /* Assurez-vous que le style du logo reste inchangé */
