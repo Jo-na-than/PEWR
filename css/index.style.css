@@ -86,6 +86,11 @@ aside {
 	height: auto;
 }
 
+.logo-utile {
+	width: 150px;
+	height: auto;
+}
+
 /* Aside with the map on the right and text to the left */
 .content-aside {
 	display: flex;
@@ -143,6 +148,24 @@ aside .map-iframe {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+/* Aligner les logos utiles et les rendre de la même taille */
+.useful-links {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 15px; /* Espacement entre les logos */
+	flex-wrap: wrap; /* Pour s'adapter aux petits écrans */
+}
+
+.logo-utile {
+	width: 120px; /* Largeur identique pour chaque logo */
+	height: 120px; /* Hauteur identique pour chaque logo */
+	object-fit: contain; /* Pour maintenir les proportions originales */
+	border-radius: 5px;
+	background-color: #202020;
+	padding: 10px;
 }
 
 /* Styles spécifiques pour le footer */
