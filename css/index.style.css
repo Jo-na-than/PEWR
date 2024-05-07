@@ -138,17 +138,20 @@ aside .map-iframe {
 
 /* Styles pour la grille des partenaires */
 .carousel-inner {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr); /* 4 colonnes */
-	gap: 15px; /* Espacement entre les items */
+	display: flex;
+	justify-content: space-between; /* Espacement équitable entre les éléments */
+	gap: 15px;
 	align-items: center;
-	justify-items: center;
+	flex-wrap: wrap; /* Permet le retour à la ligne si nécessaire */
 }
 
 .carousel-item {
+	flex: 1;
+	min-width: 150px; /* Assure que chaque logo conserve sa taille minimale */
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	margin: 5px;
 }
 
 /* Aligner les logos utiles et les rendre de la même taille */
