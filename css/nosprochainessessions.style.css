@@ -48,6 +48,7 @@ nav a:hover {
 	background-color: #c09f51;
 	color: #13131b;
 }
+
 /* Configuration du main content pour aligner section et aside */
 .main-content {
 	display: flex;
@@ -79,54 +80,29 @@ aside .map {
 	height: auto;
 }
 
-/* Centrage de la section du formulaire */
-section:last-of-type {
-	width: 60%;
-	margin: 0 auto;
-	padding: 20px;
-	background-color: #252525;
-	border-radius: 5px;
-	text-align: justify;
+/* Couleurs personnalisées pour chaque article */
+article.ssiap {
+	color: red;
 }
 
-/* Styles spécifiques pour le formulaire */
-form {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+article.elec {
+	color: yellow;
 }
 
-form div,
-form button[type='submit'] {
-	width: 100%;
-	max-width: 500px;
+article.sst {
+	color: #34c924;
 }
 
-/* Styles pour les champs du formulaire */
-form input[type='text'],
-form input[type='email'],
-form textarea {
-	width: 100%;
-	padding: 10px;
-	margin-bottom: 15px;
-	border: 1px solid #333333;
-	background-color: #202020;
-	color: #fff;
+article.aps {
+	color: #77b5fe;
 }
 
-/* Styles pour le bouton d'envoi */
-form button[type='submit'] {
-	background-color: #c09f51;
-	color: #13131b;
-	padding: 10px 20px;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-	transition: background-color 0.3s;
+article.garde {
+	color: #c8ad7f;
 }
 
-form button[type='submit']:hover {
-	background-color: #af8c41;
+article.pack {
+	color: #ff8300;
 }
 
 /* footer */
