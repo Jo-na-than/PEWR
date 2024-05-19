@@ -181,6 +181,7 @@ footer {
 	max-width: 100%; /* Limite maximale de la largeur */
 	border-top: 2px solid #c09f51; /* Bordure dorée */
 	gap: 10px; /* Réduit l'espacement entre les éléments */
+	box-sizing: border-box; /* Ensure padding is included in element's total width and height */
 }
 
 /* Centrer et justifier les paragraphes dans le footer */
@@ -211,6 +212,15 @@ footer p {
 		display: block;
 		margin: 5px 0;
 	}
+
+	footer {
+		padding: 15px 10px; /* Ajuste le padding pour les petits écrans */
+		gap: 8px; /* Ajuste l'espacement entre les éléments */
+	}
+
+	footer p {
+		line-height: 1.2; /* Ajuste la hauteur de ligne pour les petits écrans */
+	}
 }
 
 @media screen and (max-width: 480px) {
@@ -221,5 +231,14 @@ footer p {
 
 	.ecusson {
 		width: 40px;
+	}
+
+	footer {
+		padding: 10px 5px; /* Ajuste le padding pour les très petits écrans */
+		gap: 5px; /* Réduit l'espacement entre les éléments */
+	}
+
+	footer p {
+		line-height: 1.1; /* Réduit la hauteur de ligne pour les très petits écrans */
 	}
 }
