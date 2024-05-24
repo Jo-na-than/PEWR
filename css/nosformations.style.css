@@ -217,6 +217,10 @@ article.plomberie {
 	color: #0080ff;
 }
 
+article.drone {
+	color: #66ffff;
+}
+
 /* footer */
 footer {
 	display: flex;
