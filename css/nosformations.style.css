@@ -130,9 +130,11 @@ section h2 {
 	60%,
 	80%,
 	100% {
+		-webkit-transform: translateY(0);
 		transform: translateY(0);
 	}
 	50% {
+		-webkit-transform: translateY(-20px);
 		transform: translateY(-20px);
 	}
 }
@@ -161,7 +163,7 @@ section h2 {
 }
 
 .ecusson {
-	width: 70px; /* Correspond à la taille du premier code */
+	width: 70px;
 	height: auto;
 	margin-right: 15px;
 }
@@ -219,31 +221,27 @@ article.drone {
 	color: #66ffff;
 }
 
-/* Styles pour les boutons */
+/* Styles pour le bouton */
 button {
 	background-color: #c09f51;
-	color: #13131b;
+	color: #fff;
+	padding: 10px 20px;
 	border: none;
-	padding: 5px;
-	font-size: 14px;
-	font-family: Arial, sans-serif;
-	cursor: pointer;
-	transition: background-color 0.3s, transform 0.3s;
-	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 	border-radius: 5px;
-	margin-top: 5px;
-	width: 50%;
-	box-sizing: border-box;
+	font-size: 16px;
+	cursor: pointer;
+	transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
 button:hover {
-	background-color: #a3843b;
-	transform: scale(1.05);
+	background-color: #d0a563;
+	transform: translateY(-2px);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-button:active {
-	transform: scale(0.95);
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+button:focus {
+	outline: none;
+	box-shadow: 0 0 0 3px rgba(192, 159, 81, 0.5);
 }
 
 /* footer */
@@ -318,5 +316,30 @@ footer p {
 
 	footer p {
 		line-height: 1.1; /* Réduit la hauteur de ligne pour les très petits écrans */
+	}
+}
+
+@media screen and (orientation: landscape) and (max-height: 600px) {
+	.fiche {
+		width: calc(50% - 15px); /* Deux par ligne */
+		height: auto; /* Ajuste la hauteur automatiquement */
+	}
+
+	.ecusson {
+		width: 50px;
+	}
+
+	nav a {
+		display: block;
+		margin: 5px 0;
+	}
+
+	footer {
+		padding: 15px 10px; /* Ajuste le padding pour les petits écrans */
+		gap: 8px; /* Ajuste l'espacement entre les éléments */
+	}
+
+	footer p {
+		line-height: 1.2; /* Ajuste la hauteur de ligne pour les petits écrans */
 	}
 }
