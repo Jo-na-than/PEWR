@@ -115,6 +115,19 @@ article.pack {
 	color: #ff8300;
 }
 
+/* Styles pour les paragraphes */
+p {
+	animation: slideIn 1s ease-out;
+}
+
+p:nth-child(even) {
+	animation: slideInFromLeft 1s ease-out;
+}
+
+p:nth-child(odd) {
+	animation: slideInFromRight 1s ease-out;
+}
+
 /* footer */
 footer {
 	display: flex;
@@ -225,5 +238,23 @@ footer .logo {
 	}
 	to {
 		transform: scale(1);
+	}
+}
+
+@keyframes slideInFromLeft {
+	from {
+		transform: translateX(-100%);
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+
+@keyframes slideInFromRight {
+	from {
+		transform: translateX(100%);
+	}
+	to {
+		transform: translateX(0);
 	}
 }
