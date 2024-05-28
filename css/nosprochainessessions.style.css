@@ -66,14 +66,18 @@ nav a:hover {
 	display: flex;
 	justify-content: center;
 	padding: 15px;
+	box-sizing: border-box; /* Ensure padding is included in element's total width and height */
 }
 
 section {
 	width: 100%;
+	max-width: 600px; /* Limite maximale de la largeur pour garder les sections centrées */
 	padding: 10px;
 	text-align: center; /* Centre le texte dans la section */
 	background-color: #202020;
 	animation: fadeInUp 1s ease-out;
+	margin: 0 auto; /* Centre la section horizontalement */
+	box-sizing: border-box; /* Ensure padding is included in element's total width and height */
 }
 
 section a {
@@ -84,6 +88,7 @@ section a {
 article {
 	animation: fadeInUp 1s ease-out;
 	transition: transform 0.3s, background-color 0.3s;
+	margin: 10px 0; /* Ajoute un espacement vertical entre les articles */
 }
 
 article:hover {
@@ -118,6 +123,8 @@ article.pack {
 /* Styles pour les paragraphes */
 p {
 	animation: slideIn 1s ease-out;
+	margin: 0; /* Enlève les marges par défaut pour éviter des espaces indésirables */
+	padding: 5px 0; /* Ajoute un espacement vertical pour les paragraphes */
 }
 
 p:nth-child(even) {
@@ -161,15 +168,137 @@ footer .logo {
 	animation: zoomIn 2s ease-in-out;
 }
 
-/* Réponse pour les dispositifs mobiles */
-@media (max-width: 800px) {
-	.main-content,
-	section {
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+	header {
 		flex-direction: column;
-		width: 100%;
 	}
 
-	section:last-of-type {
+	nav a {
+		display: block;
+		margin: 5px 0;
+	}
+
+	footer {
+		padding: 15px 10px;
+		gap: 8px;
+	}
+
+	footer p {
+		line-height: 1.2;
+	}
+
+	.main-content {
+		padding: 10px;
+	}
+
+	section {
+		width: 100%;
+		max-width: 100%;
+		padding: 10px;
+		margin: 10px 0;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	footer {
+		padding: 10px 5px;
+		gap: 5px;
+	}
+
+	footer p {
+		line-height: 1.1;
+	}
+
+	.main-content {
+		padding: 10px;
+	}
+
+	section {
+		width: 100%;
+		max-width: 100%;
+		padding: 10px;
+		margin: 10px 0;
+	}
+
+	nav a {
+		margin: 5px 0;
+	}
+}
+
+@media screen and (max-width: 1125px) and (max-height: 2436px) {
+	footer {
+		padding: 15px 10px;
+		gap: 8px;
+	}
+
+	footer p {
+		line-height: 1.2;
+	}
+
+	.main-content {
+		padding: 10px;
+	}
+
+	section {
+		width: 100%;
+		max-width: 100%;
+		padding: 10px;
+		margin: 10px 0;
+	}
+
+	nav a {
+		display: block;
+		margin: 5px 0;
+	}
+}
+
+@media screen and (orientation: landscape) and (max-height: 600px) {
+	nav a {
+		display: block;
+		margin: 5px 0;
+	}
+
+	footer {
+		padding: 15px 10px;
+		gap: 8px;
+	}
+
+	footer p {
+		line-height: 1.2;
+	}
+
+	.main-content {
+		padding: 10px;
+	}
+
+	section {
+		width: 100%;
+		max-width: 100%;
+		padding: 10px;
+		margin: 10px 0;
+	}
+}
+
+/* Styles spécifiques pour iPhone 11 Pro */
+@media screen and (max-width: 375px) and (max-height: 812px) {
+	footer {
+		padding: 10px 5px;
+		gap: 5px;
+	}
+
+	footer p {
+		line-height: 1.1;
+	}
+
+	.main-content {
+		padding: 10px;
+	}
+
+	section {
+		width: 100%;
+		max-width: 100%;
+		padding: 10px;
 		margin: 10px 0;
 	}
 }
