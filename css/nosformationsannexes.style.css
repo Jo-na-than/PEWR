@@ -10,12 +10,7 @@ body {
 	overflow-x: hidden;
 	display: flex;
 	flex-direction: column;
-	min-height: 100vh; /* Assure que le corps prend toute la hauteur de la fenêtre */
-}
-
-/* Styles pour le container principal */
-#container {
-	flex: 1;
+	min-height: 100vh;
 }
 
 /* Styles pour le header, incluant le logo et la navigation */
@@ -72,6 +67,7 @@ nav a:hover {
 /* Section principale */
 main {
 	padding: 20px;
+	flex: 1;
 }
 
 main h2 {
@@ -97,6 +93,17 @@ main h2 {
 	animation: fadeInCategory 0.5s ease-in-out forwards;
 }
 
+@keyframes fadeInCategory {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
 .sector h3 {
 	color: #c09f51;
 	cursor: pointer;
@@ -112,7 +119,7 @@ main h2 {
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center; /* Center the fiche items */
-	align-items: center; /* Align items at the center */
+	align-items: flex-start;
 	padding: 10px 0;
 }
 
@@ -278,6 +285,7 @@ footer {
 	border-top: 2px solid #c09f51;
 	gap: 10px;
 	box-sizing: border-box;
+	margin-top: auto;
 }
 
 footer p {
@@ -320,7 +328,6 @@ footer p {
 	.sector .formations {
 		flex-direction: row; /* Ensure the fiche items stay in a row */
 		justify-content: center; /* Center the fiche items */
-		align-items: center; /* Align items at the center */
 	}
 }
 
@@ -346,7 +353,6 @@ footer p {
 	.sector .formations {
 		flex-direction: column;
 		justify-content: center; /* Center the fiche items */
-		align-items: center; /* Align items at the center */
 	}
 }
 
@@ -372,7 +378,6 @@ footer p {
 	.sector .formations {
 		flex-direction: column;
 		justify-content: center; /* Center the fiche items */
-		align-items: center; /* Align items at the center */
 	}
 
 	nav a {
@@ -408,7 +413,6 @@ footer p {
 	.sector .formations {
 		flex-direction: column;
 		justify-content: center; /* Center the fiche items */
-		align-items: center; /* Align items at the center */
 	}
 }
 
