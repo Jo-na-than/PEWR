@@ -328,11 +328,9 @@ footer .logo {
 	60%,
 	80%,
 	100% {
-		-webkit-transform: translateY(0);
 		transform: translateY(0);
 	}
 	50% {
-		-webkit-transform: translateY(-20px);
 		transform: translateY(-20px);
 	}
 }
