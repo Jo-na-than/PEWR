@@ -8,7 +8,14 @@ body {
 	padding: 0;
 	line-height: 1.5;
 	overflow-x: hidden;
-	padding-bottom: 80px; /* Ajout d'un padding-bottom pour éviter que le contenu soit caché par le footer */
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh; /* Assure que le corps prend toute la hauteur de la fenêtre */
+}
+
+/* Styles pour le container principal */
+#container {
+	flex: 1;
 }
 
 /* Styles pour le header, incluant le logo et la navigation */
@@ -105,7 +112,7 @@ main h2 {
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center; /* Center the fiche items */
-	align-items: flex-start;
+	align-items: center; /* Align items at the center */
 	padding: 10px 0;
 }
 
@@ -259,9 +266,6 @@ button:focus {
 
 /* footer */
 footer {
-	position: fixed; /* Fixé en bas de la page */
-	bottom: 0; /* Collé au bas de la fenêtre du navigateur */
-	left: 0; /* Aligné à gauche */
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -274,7 +278,6 @@ footer {
 	border-top: 2px solid #c09f51;
 	gap: 10px;
 	box-sizing: border-box;
-	z-index: 1000; /* Assure que le footer est toujours au-dessus des autres éléments */
 }
 
 footer p {
@@ -317,6 +320,7 @@ footer p {
 	.sector .formations {
 		flex-direction: row; /* Ensure the fiche items stay in a row */
 		justify-content: center; /* Center the fiche items */
+		align-items: center; /* Align items at the center */
 	}
 }
 
@@ -342,6 +346,7 @@ footer p {
 	.sector .formations {
 		flex-direction: column;
 		justify-content: center; /* Center the fiche items */
+		align-items: center; /* Align items at the center */
 	}
 }
 
@@ -367,6 +372,7 @@ footer p {
 	.sector .formations {
 		flex-direction: column;
 		justify-content: center; /* Center the fiche items */
+		align-items: center; /* Align items at the center */
 	}
 
 	nav a {
@@ -402,6 +408,7 @@ footer p {
 	.sector .formations {
 		flex-direction: column;
 		justify-content: center; /* Center the fiche items */
+		align-items: center; /* Align items at the center */
 	}
 }
 
