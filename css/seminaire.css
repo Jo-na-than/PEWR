@@ -1,0 +1,189 @@
+/* Styles généraux pour le corps de la page */
+body {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 16px;
+	color: #f0f0f0;
+	background-color: #121212;
+	margin: 0;
+	padding: 0;
+	line-height: 1.6;
+	overflow-x: hidden;
+	animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Styles pour le header */
+header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	background-color: #1f1f1f;
+	padding: 15px 0;
+	box-sizing: border-box;
+}
+
+header .logo {
+	width: 150px;
+	margin-bottom: 10px;
+	animation: slideInFromTop 1s ease-out;
+}
+
+header h1 {
+	text-align: center;
+	color: #e0e0e0;
+	margin: 0;
+}
+
+/* Styles ajustés pour nav */
+nav {
+	background-color: #282828;
+	text-align: center;
+	padding: 10px 0;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+nav a {
+	text-decoration: none;
+	color: #c09f51;
+	margin: 0 15px;
+	padding: 10px 0;
+	transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+nav a:hover {
+	background-color: #c09f51;
+	color: #121212;
+	transform: scale(1.1);
+}
+
+/* Configuration du main content */
+.main-content {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	padding: 20px;
+	align-items: stretch;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.room {
+	background-color: #1f1f1f;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	box-sizing: border-box;
+	animation: fadeIn 2s ease-in-out;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.room img {
+	width: 100%;
+	height: auto;
+	border-radius: 10px;
+}
+
+.room h4 {
+	margin: 10px 0;
+	color: #c09f51;
+}
+
+.room p {
+	margin: 5px 0;
+	color: #e0e0e0;
+}
+
+/* Styles pour aside */
+aside {
+	background-color: #1f1f1f;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	box-sizing: border-box;
+	animation: fadeIn 2s ease-in-out;
+	text-align: center;
+	margin-top: 20px;
+}
+
+aside p {
+	margin: 5px 0;
+	color: #e0e0e0;
+}
+
+/* footer */
+footer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color: #f0f0f0;
+	padding: 25px 20px;
+	background-color: #1f1f1f;
+	width: 100%;
+	border-top: 2px solid #c09f51;
+	gap: 15px;
+	box-sizing: border-box;
+}
+
+/* Centrer et justifier les paragraphes dans le footer */
+footer p {
+	margin: 0;
+	text-align: center;
+	width: 100%;
+	line-height: 1.4;
+}
+
+/* Adaptation pour les écrans mobiles */
+@media (max-width: 800px) {
+	.main-content {
+		flex-direction: column;
+		gap: 15px;
+		align-items: center;
+		width: 100%;
+		overflow-x: hidden;
+	}
+
+	.room {
+		width: 100%;
+	}
+
+	aside {
+		width: 100%;
+	}
+}
+
+/* Animations */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes slideInFromTop {
+	from {
+		transform: translateY(-100%);
+	}
+	to {
+		transform: translateY(0);
+	}
+}
+
+.fade-in {
+	animation: fadeIn 2s ease-in-out;
+}
