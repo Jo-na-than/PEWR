@@ -76,54 +76,14 @@ main h2 {
 	text-align: center;
 }
 
-/* Ajout du style pour centrer le h3 */
-.sector {
-	background-color: #252525;
-	margin-bottom: 10px;
-	padding: 10px;
-	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-	transition: max-height 0.3s ease-out;
-	overflow: hidden;
-	max-height: 50px; /* Initial height to show only the header */
-	opacity: 0; /* Start hidden */
-}
-
-/* New animation class for categories */
-.animate-category {
-	animation: fadeInCategory 0.5s ease-in-out forwards;
-}
-
-@keyframes fadeInCategory {
-	from {
-		opacity: 0;
-		transform: translateY(20px);
-	}
-	to {
-		opacity: 1;
-		transform: translateY(0);
-	}
-}
-
-.sector h3 {
-	color: #c09f51;
-	cursor: pointer;
-	margin: 0;
-	padding: 10px 0;
-	text-align: center; /* Center the h3 text */
-	width: 100%; /* Ensure the h3 takes full width of its container */
-	box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
-}
-
-.sector .formations {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: center; /* Center the fiche items */
-	align-items: flex-start;
-	padding: 10px 0;
-}
-
 /* Styles pour les fiches */
+.formations-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 15px;
+}
+
 .fiche {
 	display: flex;
 	align-items: center;
@@ -139,7 +99,7 @@ main h2 {
 }
 
 .fiche:nth-child(odd) {
-	background-color: #3c3c3c; /* Alternate background color for better identification */
+	background-color: #3c3c3c;
 }
 
 .fiche:hover {
@@ -147,56 +107,6 @@ main h2 {
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 	background-color: #444444;
 	cursor: pointer;
-}
-
-/* New animation class */
-.animate-fiche {
-	opacity: 0;
-	animation: fadeInUp 1s ease-in forwards;
-}
-
-/* Animations */
-@keyframes fadeIn {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
-}
-
-@keyframes slideInFromTop {
-	from {
-		transform: translateY(-100%);
-	}
-	to {
-		transform: translateY(0);
-	}
-}
-
-@keyframes bounceIn {
-	0%,
-	20%,
-	40%,
-	60%,
-	80%,
-	100% {
-		transform: translateY(0);
-	}
-	50% {
-		transform: translateY(-20px);
-	}
-}
-
-@keyframes fadeInUp {
-	from {
-		opacity: 0;
-		transform: translateY(20px);
-	}
-	to {
-		opacity: 1;
-		transform: translateY(0);
-	}
 }
 
 .ecusson {
@@ -325,9 +235,8 @@ footer p {
 		line-height: 1.2;
 	}
 
-	.sector .formations {
-		flex-direction: row; /* Ensure the fiche items stay in a row */
-		justify-content: center; /* Center the fiche items */
+	.formations-container {
+		justify-content: center;
 	}
 }
 
@@ -350,9 +259,10 @@ footer p {
 		line-height: 1.1;
 	}
 
-	.sector .formations {
+	.formations-container {
+		justify-content: center;
 		flex-direction: column;
-		justify-content: center; /* Center the fiche items */
+		align-items: center;
 	}
 }
 
@@ -375,9 +285,8 @@ footer p {
 		line-height: 1.2;
 	}
 
-	.sector .formations {
-		flex-direction: column;
-		justify-content: center; /* Center the fiche items */
+	.formations-container {
+		justify-content: center;
 	}
 
 	nav a {
@@ -410,9 +319,8 @@ footer p {
 		line-height: 1.2;
 	}
 
-	.sector .formations {
-		flex-direction: column;
-		justify-content: center; /* Center the fiche items */
+	.formations-container {
+		justify-content: center;
 	}
 }
 
@@ -423,10 +331,10 @@ footer p {
 		height: auto;
 	}
 
-	.sector .formations {
+	.formations-container {
 		flex-direction: column;
 		justify-content: center;
-		align-items: center; /* Center the fiche items */
+		align-items: center;
 	}
 
 	.ecusson {
