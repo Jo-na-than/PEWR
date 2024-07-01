@@ -29,7 +29,7 @@ header {
 header .logo {
 	width: 150px;
 	margin-bottom: 10px;
-	animation: bounceIn 2s ease-in-out;
+	animation: bounceIn 2s ease-in-out, rotateLogo 20s linear infinite;
 }
 
 header h1 {
@@ -68,6 +68,7 @@ nav a:hover {
 main {
 	padding: 20px;
 	flex: 1;
+	animation: fadeInSection 1s ease-in-out;
 }
 
 main h2 {
@@ -87,15 +88,15 @@ main h2 {
 .fiche {
 	display: flex;
 	align-items: center;
-	background-color: #333333; /* Changed background color */
+	background-color: #333333;
 	color: #ffffff;
 	width: calc(33.333% - 15px);
 	margin: 7px;
 	padding: 15px;
 	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 	height: auto;
-	transition: transform 0.3s, box-shadow 0.3s;
-	opacity: 1; /* Default opacity */
+	transition: transform 0.3s, box-shadow 0.3s, opacity 0.5s;
+	opacity: 1;
 }
 
 .fiche:nth-child(odd) {
@@ -107,6 +108,7 @@ main h2 {
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 	background-color: #444444;
 	cursor: pointer;
+	opacity: 0.8;
 }
 
 .ecusson {
@@ -167,13 +169,15 @@ button {
 	border-radius: 5px;
 	font-size: 16px;
 	cursor: pointer;
-	transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+	transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s,
+		opacity 0.5s;
 }
 
 button:hover {
 	background-color: #d0a563;
 	transform: translateY(-2px);
 	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+	opacity: 0.8;
 }
 
 button:focus {
@@ -196,6 +200,7 @@ footer {
 	gap: 10px;
 	box-sizing: border-box;
 	margin-top: auto;
+	animation: fadeInSection 2s ease-in-out;
 }
 
 footer p {
@@ -348,5 +353,75 @@ footer p {
 
 	footer p {
 		line-height: 1.1;
+	}
+}
+
+/* Keyframes for animations */
+@keyframes slideInFromTop {
+	from {
+		transform: translateY(-100%);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes bounceIn {
+	0%,
+	20%,
+	40%,
+	60%,
+	80%,
+	100% {
+		transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+	}
+
+	0% {
+		opacity: 0;
+		transform: scale3d(0.3, 0.3, 0.3);
+	}
+
+	20% {
+		transform: scale3d(1.1, 1.1, 1.1);
+	}
+
+	40% {
+		transform: scale3d(0.9, 0.9, 0.9);
+	}
+
+	60% {
+		opacity: 1;
+		transform: scale3d(1.03, 1.03, 1.03);
+	}
+
+	80% {
+		transform: scale3d(0.97, 0.97, 0.97);
+	}
+
+	100% {
+		opacity: 1;
+		transform: scale3d(1, 1, 1);
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes fadeInSection {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
 	}
 }
