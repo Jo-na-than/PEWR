@@ -69,8 +69,8 @@ nav a:hover {
 	box-sizing: border-box;
 }
 
-aside,
-section {
+/* Styles pour les sections de contenu */
+.content-section {
 	background-color: #1f1f1f;
 	padding: 20px;
 	border-radius: 10px;
@@ -85,23 +85,183 @@ section {
 	text-align: center;
 }
 
-/* Centering ul and li in the container */
+.section-content {
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.text-content {
+	flex: 1;
+}
+
 ul {
 	list-style-type: disc;
-	padding-left: 0;
-	text-align: left;
+	padding-left: 20px;
+	text-align: center;
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 
+/* Ajout de la classe pour les icônes des listes */
+ul.dynamic-list li::before {
+	content: '✔'; /* Vous pouvez changer cette icône par une autre de votre choix */
+	color: #c09f51;
+	margin-right: 10px;
+	font-size: 1.2em;
+	display: inline-block;
+}
+
+/* Animation pour les éléments de liste */
+ul.dynamic-list li {
+	animation: listFadeIn 0.5s ease-in-out;
+	transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+	text-align: justify; /* Justification du texte */
+}
+
+/* Animation de fondu en entrée pour les éléments de liste */
+@keyframes listFadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Styles pour la liste des tags */
+.tags-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	padding: 0;
+	list-style: none;
+	justify-content: center; /* Centrer les tags */
+	width: 100%;
+	text-align: justify; /* Justification du texte */
+}
+
+.tags-list li {
+	background-color: #c09f51;
+	color: #121212;
+	padding: 5px 10px;
+	border-radius: 15px;
+	font-size: 0.9em;
+	display: inline-block;
+	flex: 1 1 auto; /* Ajuste pour rendre les tags plus petits */
+	box-sizing: border-box;
+	transition: background-color 0.3s, color 0.3s;
+	text-align: justify; /* Justification du texte */
+	max-width: 150px; /* Limite la taille des tags pour les aligner */
+	white-space: nowrap; /* Empêche le retour à la ligne des tags */
+	overflow: hidden; /* Masque le texte qui dépasse */
+	text-overflow: ellipsis; /* Ajoute des points de suspension pour le texte qui dépasse */
+}
+
+.tags-list li:hover {
+	background-color: #a08040;
+	color: #ffffff;
+}
+
+.tags-list li::before {
+	content: none; /* Supprimer les icônes de liste par défaut */
+}
+
+/* Nouvelle section optimisée */
+.optimized-section .section-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+}
+
+.optimized-section .second-section-list {
+	display: flex;
+	flex-direction: column; /* Ensure items are arranged vertically */
+	justify-content: center; /* Center the elements */
+	gap: 10px;
+	width: 100%;
+}
+
+.optimized-section .second-section-list li {
+	background-color: #c09f51;
+	color: #121212;
+	padding: 5px 10px;
+	border-radius: 10px;
+	font-size: 0.8em;
+	box-sizing: border-box;
+	transition: background-color 0.3s, color 0.3s;
+	list-style: none;
+	font-weight: bold; /* Contenu en gras */
+	overflow: hidden; /* Masque le texte qui dépasse */
+	text-overflow: ellipsis; /* Ajoute des points de suspension pour le texte qui dépasse */
+	display: inline-block;
+	max-width: 150px; /* Limite la taille des éléments de la liste */
+}
+
+.optimized-section .second-section-list li:hover {
+	background-color: #a08040;
+	color: #ffffff;
+}
+
+.optimized-section .second-section-list li::before {
+	content: none;
+}
+
+.optimized-section .image-grid {
+	display: flex;
+	justify-content: center; /* Centrer les images */
+	flex-wrap: wrap;
+	gap: 20px;
+	width: 100%; /* Ajustement de la largeur */
+}
+
+.optimized-section .image-small {
+	max-width: 200px; /* Ajustement de la largeur pour que les images soient plus grandes */
+	height: auto;
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Adaptation pour les écrans mobiles */
+@media (max-width: 800px) {
+	.tags-list {
+		justify-content: center; /* Centre les tags sur les petits écrans */
+	}
+
+	.tags-list li {
+		flex: 1 1 calc(50% - 10px); /* Ajuste pour 2 tags par ligne sur petits écrans */
+	}
+}
+
 li {
 	margin-bottom: 10px;
-	text-align: center; /* Center text in list items */
+	text-align: left;
 	width: 100%;
 	display: flex;
-	justify-content: center; /* Center the list items */
+	justify-content: flex-start;
+}
+
+.image-grid {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center; /* Centrer les images */
+	align-items: center;
+	gap: 20px;
+	width: 100%; /* Ajustement de la largeur */
+}
+
+.image-small {
+	max-width: 200px; /* Ajustement de la largeur pour que les images soient plus grandes */
+	height: auto;
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* footer */
@@ -119,7 +279,6 @@ footer {
 	box-sizing: border-box;
 }
 
-/* Centrer et justifier les paragraphes dans le footer */
 footer p {
 	margin: 0;
 	text-align: center;
@@ -137,29 +296,76 @@ footer p {
 		overflow-x: hidden;
 	}
 
-	aside,
-	section {
+	.content-section {
 		width: 100%;
 	}
 
-	/* Center ul in the container */
 	ul {
-		width: 100%; /* Ensure ul takes full width */
+		width: 100%;
 		padding-left: 0;
 		margin: 0 auto;
-		text-align: center; /* Center text inside ul */
+		text-align: left;
 		display: flex;
 		flex-direction: column;
-		align-items: center;
+		align-items: flex-start;
 	}
 
-	/* Center li in responsive mode */
 	li {
 		width: auto;
 		display: flex;
-		justify-content: center;
-		text-align: center;
+		justify-content: flex-start;
+		text-align: left;
 	}
+
+	.image-grid {
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.image-small {
+		max-width: 100%;
+	}
+
+	.section-content {
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+/* Styles pour les éléments de la liste de la seconde section */
+.second-section-list {
+	display: flex;
+	flex-direction: column; /* Ensure items are arranged vertically */
+	gap: 10px;
+	padding: 0;
+	list-style: none;
+	justify-content: flex-start; /* Aligne les éléments à gauche */
+	width: 100%;
+}
+
+.second-section-list li {
+	background-color: #c09f51;
+	color: #121212;
+	padding: 5px 10px;
+	border-radius: 10px;
+	font-size: 0.8em;
+	display: inline-block;
+	flex: 0 0 auto; /* Ajuste pour rendre les éléments non flexibles */
+	box-sizing: border-box;
+	transition: background-color 0.3s, color 0.3s;
+	font-weight: bold; /* Contenu en gras */
+	white-space: nowrap; /* Empêche le retour à la ligne */
+	overflow: hidden; /* Masque le texte qui dépasse */
+	text-overflow: ellipsis; /* Ajoute des points de suspension pour le texte qui dépasse */
+}
+
+.second-section-list li:hover {
+	background-color: #a08040;
+	color: #ffffff;
+}
+
+.second-section-list li::before {
+	content: none;
 }
 
 /* Animations */
