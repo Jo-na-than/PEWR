@@ -8,7 +8,6 @@ body {
 	padding: 0;
 	line-height: 1.6;
 	overflow-x: hidden;
-	animation: fadeIn 1.5s ease-in-out;
 }
 
 /* Styles pour le header */
@@ -20,13 +19,11 @@ header {
 	width: 100%;
 	background-color: #1f1f1f;
 	padding: 15px 0;
-	box-sizing: border-box;
 }
 
 header .logo {
 	width: 150px;
 	margin-bottom: 10px;
-	animation: slideInFromTop 1s ease-out;
 }
 
 header h1 {
@@ -41,7 +38,6 @@ nav {
 	text-align: center;
 	padding: 10px 0;
 	width: 100%;
-	box-sizing: border-box;
 }
 
 nav a {
@@ -99,12 +95,12 @@ nav a:hover {
 }
 
 ul {
-	list-style-type: disc;
+	list-style-type: none;
 	padding-left: 20px;
 	text-align: center;
 	margin: 0 auto;
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	align-items: center;
 	width: 100%;
 }
@@ -116,26 +112,6 @@ ul.dynamic-list li::before {
 	margin-right: 10px;
 	font-size: 1.2em;
 	display: inline-block;
-}
-
-/* Animation pour les éléments de liste */
-ul.dynamic-list li {
-	animation: listFadeIn 0.5s ease-in-out;
-	transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
-	text-align: justify; /* Justification du texte */
-	width: 100%;
-}
-
-/* Animation de fondu en entrée pour les éléments de liste */
-@keyframes listFadeIn {
-	from {
-		opacity: 0;
-		transform: translateY(20px);
-	}
-	to {
-		opacity: 1;
-		transform: translateY(0);
-	}
 }
 
 /* Styles pour la liste des tags */
@@ -161,10 +137,7 @@ ul.dynamic-list li {
 	box-sizing: border-box;
 	transition: background-color 0.3s, color 0.3s;
 	text-align: justify; /* Justification du texte */
-	max-width: 150px; /* Limite la taille des tags pour les aligner */
-	white-space: nowrap; /* Empêche le retour à la ligne des tags */
-	overflow: hidden; /* Masque le texte qui dépasse */
-	text-overflow: ellipsis; /* Ajoute des points de suspension pour le texte qui dépasse */
+	white-space: normal; /* Permettre le retour à la ligne */
 }
 
 .tags-list li:hover {
@@ -204,11 +177,8 @@ ul.dynamic-list li {
 	transition: background-color 0.3s, color 0.3s;
 	list-style: none;
 	font-weight: bold; /* Contenu en gras */
-	overflow: hidden; /* Masque le texte qui dépasse */
-	text-overflow: ellipsis; /* Ajoute des points de suspension pour le texte qui dépasse */
-	max-width: 150px; /* Limite la taille des éléments de la liste */
-	white-space: nowrap; /* Empêche le retour à la ligne */
-	display: inline-block;
+	white-space: normal; /* Permettre le retour à la ligne */
+	display: inline-block; /* Ajout de cette ligne pour les afficher en ligne */
 }
 
 .optimized-section .second-section-list li:hover {
@@ -231,6 +201,26 @@ ul.dynamic-list li {
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Ajout de styles pour l'image de la troisième section */
+.third-section-image {
+	max-width: 200px;
+	height: auto;
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajout de styles pour centrer les éléments de la troisième section */
+.third-section-list {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+	padding: 0;
+	list-style: none;
+	width: 100%;
+	text-align: center;
+}
+
 /* Adaptation pour les écrans mobiles */
 @media (max-width: 800px) {
 	.tags-list {
@@ -240,56 +230,7 @@ ul.dynamic-list li {
 	.tags-list li {
 		flex: 1 1 calc(50% - 10px); /* Ajuste pour 2 tags par ligne sur petits écrans */
 	}
-}
 
-li {
-	margin-bottom: 10px;
-	text-align: left;
-	width: 100%;
-	display: flex;
-	justify-content: flex-start;
-}
-
-.image-grid {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center; /* Centrer les images */
-	align-items: center;
-	gap: 20px;
-	width: 100%; /* Ajustement de la largeur */
-}
-
-.image-small {
-	max-width: 200px; /* Ajustement de la largeur pour que les images soient plus grandes */
-	height: auto;
-	border-radius: 10px;
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* footer */
-footer {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	color: #f0f0f0;
-	padding: 25px 20px;
-	background-color: #1f1f1f;
-	width: 100%;
-	border-top: 2px solid #c09f51;
-	gap: 15px;
-	box-sizing: border-box;
-}
-
-footer p {
-	margin: 0;
-	text-align: center;
-	width: 100%;
-	line-height: 1.4;
-}
-
-/* Adaptation pour les écrans mobiles */
-@media (max-width: 800px) {
 	.main-content {
 		flex-direction: column;
 		gap: 15px;
@@ -334,138 +275,24 @@ footer p {
 	}
 }
 
-/* Styles pour les éléments de la liste de la seconde section */
-.second-section-list {
-	display: flex;
-	flex-direction: row; /* Ensure items are arranged horizontally */
-	gap: 10px;
-	padding: 0;
-	list-style: none;
-	justify-content: center; /* Aligne les éléments à gauche */
-	width: 100%;
-}
-
-.second-section-list li {
-	background-color: #c09f51;
-	color: #121212;
-	padding: 5px 10px;
-	border-radius: 10px;
-	font-size: 0.8em;
-	display: inline-block;
-	flex: 0 0 auto; /* Ajuste pour rendre les éléments non flexibles */
-	box-sizing: border-box;
-	transition: background-color 0.3s, color 0.3s;
-	font-weight: bold; /* Contenu en gras */
-	white-space: nowrap; /* Empêche le retour à la ligne */
-	overflow: hidden; /* Masque le texte qui dépasse */
-	text-overflow: ellipsis; /* Ajoute des points de suspension pour le texte qui dépasse */
-}
-
-.second-section-list li:hover {
-	background-color: #a08040;
-	color: #ffffff;
-}
-
-.second-section-list li::before {
-	content: none;
-}
-
-/* Styles pour les éléments de la liste de la troisième section */
-.inline-list {
-	display: flex;
-	flex-direction: row; /* Ensure items are arranged horizontally */
-	flex-wrap: wrap; /* Allow wrapping to next line if necessary */
-	gap: 10px;
-	list-style: disc;
-	padding-left: 20px;
-	justify-content: flex-start;
-	width: 100%;
-}
-
-.inline-list li {
-	background-color: transparent;
-	color: #f0f0f0;
-	padding: 0;
-	border-radius: 0;
-	font-size: 1em;
-	display: inline; /* Display items inline */
-	flex: 0 0 auto; /* Ensure items are not flexed */
-	box-sizing: border-box;
-	transition: background-color 0.3s, color 0.3s;
-	font-weight: normal;
-	white-space: nowrap; /* Prevent line breaks */
-	overflow: visible;
-	text-overflow: clip;
-}
-
-.inline-list li:hover {
-	background-color: transparent;
-	color: #c09f51;
-}
-
-.inline-list li::before {
-	content: '✔';
-	color: #c09f51;
-	margin-right: 10px;
-	font-size: 1.2em;
-}
-
-/* Animations */
-@keyframes fadeIn {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
-}
-
-@keyframes slideInFromTop {
-	from {
-		transform: translateY(-100%);
-	}
-	to {
-		transform: translateY(0);
-	}
-}
-
-.fade-in {
-	animation: fadeIn 2s ease-in-out;
-}
-
-/* Ajout de styles pour flex-container */
-.flex-container {
+/* footer */
+footer {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: flex-start;
-	width: 100%;
-	gap: 20px;
-}
-
-.inline-list {
-	flex-direction: row;
-	flex-wrap: wrap;
 	justify-content: center;
-	text-align: center;
-}
-
-.flex-item {
+	color: #f0f0f0;
+	padding: 25px 20px;
+	background-color: #1f1f1f;
 	width: 100%;
+	border-top: 2px solid #c09f51;
+	gap: 15px;
+	box-sizing: border-box;
 }
 
-.image-grid.flex-item {
-	margin-top: 20px;
-}
-
-@media (max-width: 800px) {
-	.flex-container {
-		flex-direction: column;
-		align-items: center;
-	}
-
-	.inline-list {
-		flex-direction: column;
-		align-items: center;
-	}
+footer p {
+	margin: 0;
+	text-align: center;
+	width: 100%;
+	line-height: 1.4;
 }
