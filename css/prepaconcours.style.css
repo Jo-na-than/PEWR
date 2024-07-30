@@ -1,0 +1,300 @@
+/* Styles généraux pour le corps de la page */
+body {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 16px;
+	color: #f0f0f0;
+	background-color: #121212;
+	margin: 0;
+	padding: 0;
+	line-height: 1.6;
+	overflow-x: hidden;
+}
+
+/* Styles pour le header */
+header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	background-color: #1f1f1f;
+	padding: 15px 0;
+}
+
+header .logo {
+	width: 150px;
+	margin-bottom: 10px;
+}
+
+header h1 {
+	text-align: center;
+	color: #e0e0e0;
+	margin: 0;
+}
+
+/* Styles ajustés pour nav */
+nav {
+	background-color: #282828;
+	text-align: center;
+	padding: 10px 0;
+	width: 100%;
+}
+
+nav a {
+	text-decoration: none;
+	color: #c09f51;
+	margin: 0 15px;
+	padding: 10px 0;
+	transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+nav a:hover {
+	background-color: #c09f51;
+	color: #121212;
+	transform: scale(1.1);
+}
+
+/* Configuration du main content */
+.main-content {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	padding: 20px;
+	align-items: stretch;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+/* Styles pour les sections de contenu */
+.content-section {
+	background-color: #1f1f1f;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	box-sizing: border-box;
+	animation: fadeIn 2s ease-in-out;
+	text-align: center;
+}
+
+.section-content {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	align-items: center;
+	width: 100%;
+}
+
+.text-content {
+	flex: 1;
+	width: 100%;
+}
+
+ul {
+	list-style-type: none;
+	padding-left: 20px;
+	text-align: center;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	width: 100%;
+}
+
+/* Ajout de la classe pour les icônes des listes */
+ul.dynamic-list li::before {
+	content: '✔'; /* Vous pouvez changer cette icône par une autre de votre choix */
+	color: #c09f51;
+	margin-right: 10px;
+	font-size: 1.2em;
+	display: inline-block;
+}
+
+/* Styles pour la liste des tags */
+.tags-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	padding: 0;
+	list-style: none;
+	justify-content: center; /* Centrer les tags */
+	width: 100%;
+	text-align: justify; /* Justification du texte */
+}
+
+.tags-list li {
+	background-color: #c09f51;
+	color: #121212;
+	padding: 5px 10px;
+	border-radius: 15px;
+	font-size: 0.9em;
+	display: inline-block;
+	flex: 1 1 auto; /* Ajuste pour rendre les tags plus petits */
+	box-sizing: border-box;
+	transition: background-color 0.3s, color 0.3s;
+	text-align: center; /* Centrer le texte */
+	white-space: normal; /* Permettre le retour à la ligne */
+	word-wrap: break-word; /* Permettre le retour à la ligne */
+}
+
+.tags-list li:hover {
+	background-color: #a08040;
+	color: #ffffff;
+}
+
+.tags-list li::before {
+	content: none; /* Supprimer les icônes de liste par défaut */
+}
+
+/* Nouvelle section optimisée */
+.optimized-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+}
+
+.optimized-section .second-section-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 10px;
+	list-style: none;
+	padding: 0;
+	width: 100%;
+}
+
+.optimized-section .second-section-list li {
+	background-color: #c09f51;
+	color: #121212;
+	padding: 5px 10px;
+	border-radius: 10px;
+	font-size: 0.8em;
+	box-sizing: border-box;
+	transition: background-color 0.3s, color 0.3s;
+	list-style: none;
+	font-weight: bold; /* Contenu en gras */
+	white-space: normal; /* Permettre le retour à la ligne */
+	display: inline-block; /* Ajout de cette ligne pour les afficher en ligne */
+	word-wrap: break-word; /* Permettre le retour à la ligne */
+}
+
+.optimized-section .second-section-list li:hover {
+	background-color: #a08040;
+	color: #ffffff;
+}
+
+.optimized-section .image-grid {
+	display: flex;
+	justify-content: center; /* Centrer les images */
+	flex-wrap: wrap;
+	gap: 20px;
+	width: 100%; /* Ajustement de la largeur */
+}
+
+.optimized-section .image-small {
+	max-width: 200px; /* Ajustement de la largeur pour que les images soient plus grandes */
+	height: auto;
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajout de styles pour l'image de la troisième section */
+.third-section-image {
+	max-width: 200px;
+	height: auto;
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajout de styles pour centrer les éléments de la troisième section */
+.third-section-list {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+	padding: 0;
+	list-style: none;
+	width: 100%;
+	text-align: center;
+}
+
+/* Adaptation pour les écrans mobiles */
+@media (max-width: 800px) {
+	.tags-list {
+		justify-content: center; /* Centre les tags sur les petits écrans */
+	}
+
+	.tags-list li {
+		flex: 1 1 calc(100% - 10px); /* Ajuste pour que les tags occupent toute la largeur sur petits écrans */
+	}
+
+	.main-content {
+		flex-direction: column;
+		gap: 15px;
+		align-items: center;
+		width: 100%;
+		overflow-x: hidden;
+	}
+
+	.content-section {
+		width: 100%;
+	}
+
+	ul {
+		width: 100%;
+		padding-left: 0;
+		margin: 0 auto;
+		text-align: left;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	li {
+		width: auto;
+		display: flex;
+		justify-content: flex-start;
+		text-align: left;
+	}
+
+	.image-grid {
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.image-small {
+		max-width: 100%;
+	}
+
+	.section-content {
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+/* footer */
+footer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color: #f0f0f0;
+	padding: 25px 20px;
+	background-color: #1f1f1f;
+	width: 100%;
+	border-top: 2px solid #c09f51;
+	gap: 15px;
+	box-sizing: border-box;
+}
+
+footer p {
+	margin: 0;
+	text-align: center;
+	width: 100%;
+	line-height: 1.4;
+}

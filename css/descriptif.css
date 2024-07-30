@@ -8,6 +8,7 @@ body {
 	padding: 0;
 	line-height: 1.6;
 	overflow-x: hidden;
+	animation: fadeIn 1.5s ease-in-out;
 }
 
 /* Styles pour le header */
@@ -19,11 +20,13 @@ header {
 	width: 100%;
 	background-color: #1f1f1f;
 	padding: 15px 0;
+	box-sizing: border-box;
 }
 
 header .logo {
 	width: 150px;
 	margin-bottom: 10px;
+	animation: slideInFromTop 1s ease-out;
 }
 
 header h1 {
@@ -38,6 +41,7 @@ nav {
 	text-align: center;
 	padding: 10px 0;
 	width: 100%;
+	box-sizing: border-box;
 }
 
 nav a {
@@ -65,8 +69,8 @@ nav a:hover {
 	box-sizing: border-box;
 }
 
-/* Styles pour les sections de contenu */
-.content-section {
+aside,
+section {
 	background-color: #1f1f1f;
 	padding: 20px;
 	border-radius: 10px;
@@ -81,198 +85,23 @@ nav a:hover {
 	text-align: center;
 }
 
-.section-content {
-	display: flex;
-	flex-direction: column;
-	gap: 20px;
-	align-items: center;
-	width: 100%;
-}
-
-.text-content {
-	flex: 1;
-	width: 100%;
-}
-
+/* Centering ul and li in the container */
 ul {
-	list-style-type: none;
-	padding-left: 20px;
-	text-align: center;
+	list-style-type: disc;
+	padding-left: 0;
+	text-align: left;
 	margin: 0 auto;
 	display: flex;
-	flex-direction: row;
-	align-items: center;
-	width: 100%;
-}
-
-/* Ajout de la classe pour les icônes des listes */
-ul.dynamic-list li::before {
-	content: '✔'; /* Vous pouvez changer cette icône par une autre de votre choix */
-	color: #c09f51;
-	margin-right: 10px;
-	font-size: 1.2em;
-	display: inline-block;
-}
-
-/* Styles pour la liste des tags */
-.tags-list {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 10px;
-	padding: 0;
-	list-style: none;
-	justify-content: center; /* Centrer les tags */
-	width: 100%;
-	text-align: justify; /* Justification du texte */
-}
-
-.tags-list li {
-	background-color: #c09f51;
-	color: #121212;
-	padding: 5px 10px;
-	border-radius: 15px;
-	font-size: 0.9em;
-	display: inline-block;
-	flex: 1 1 auto; /* Ajuste pour rendre les tags plus petits */
-	box-sizing: border-box;
-	transition: background-color 0.3s, color 0.3s;
-	text-align: justify; /* Justification du texte */
-	white-space: normal; /* Permettre le retour à la ligne */
-}
-
-.tags-list li:hover {
-	background-color: #a08040;
-	color: #ffffff;
-}
-
-.tags-list li::before {
-	content: none; /* Supprimer les icônes de liste par défaut */
-}
-
-/* Nouvelle section optimisée */
-.optimized-section {
-	display: flex;
 	flex-direction: column;
 	align-items: center;
+}
+
+li {
+	margin-bottom: 10px;
+	text-align: center; /* Center text in list items */
 	width: 100%;
-}
-
-.optimized-section .second-section-list {
 	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 10px;
-	list-style: none;
-	padding: 0;
-	width: 100%;
-}
-
-.optimized-section .second-section-list li {
-	background-color: #c09f51;
-	color: #121212;
-	padding: 5px 10px;
-	border-radius: 10px;
-	font-size: 0.8em;
-	box-sizing: border-box;
-	transition: background-color 0.3s, color 0.3s;
-	list-style: none;
-	font-weight: bold; /* Contenu en gras */
-	white-space: normal; /* Permettre le retour à la ligne */
-	display: inline-block; /* Ajout de cette ligne pour les afficher en ligne */
-}
-
-.optimized-section .second-section-list li:hover {
-	background-color: #a08040;
-	color: #ffffff;
-}
-
-.optimized-section .image-grid {
-	display: flex;
-	justify-content: center; /* Centrer les images */
-	flex-wrap: wrap;
-	gap: 20px;
-	width: 100%; /* Ajustement de la largeur */
-}
-
-.optimized-section .image-small {
-	max-width: 200px; /* Ajustement de la largeur pour que les images soient plus grandes */
-	height: auto;
-	border-radius: 10px;
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Ajout de styles pour l'image de la troisième section */
-.third-section-image {
-	max-width: 200px;
-	height: auto;
-	border-radius: 10px;
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Ajout de styles pour centrer les éléments de la troisième section */
-.third-section-list {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 10px;
-	padding: 0;
-	list-style: none;
-	width: 100%;
-	text-align: center;
-}
-
-/* Adaptation pour les écrans mobiles */
-@media (max-width: 800px) {
-	.tags-list {
-		justify-content: center; /* Centre les tags sur les petits écrans */
-	}
-
-	.tags-list li {
-		flex: 1 1 calc(50% - 10px); /* Ajuste pour 2 tags par ligne sur petits écrans */
-	}
-
-	.main-content {
-		flex-direction: column;
-		gap: 15px;
-		align-items: center;
-		width: 100%;
-		overflow-x: hidden;
-	}
-
-	.content-section {
-		width: 100%;
-	}
-
-	ul {
-		width: 100%;
-		padding-left: 0;
-		margin: 0 auto;
-		text-align: left;
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-	}
-
-	li {
-		width: auto;
-		display: flex;
-		justify-content: flex-start;
-		text-align: left;
-	}
-
-	.image-grid {
-		flex-direction: column;
-		width: 100%;
-	}
-
-	.image-small {
-		max-width: 100%;
-	}
-
-	.section-content {
-		flex-direction: column;
-		align-items: center;
-	}
+	justify-content: center; /* Center the list items */
 }
 
 /* footer */
@@ -290,9 +119,68 @@ footer {
 	box-sizing: border-box;
 }
 
+/* Centrer et justifier les paragraphes dans le footer */
 footer p {
 	margin: 0;
 	text-align: center;
 	width: 100%;
 	line-height: 1.4;
+}
+
+/* Adaptation pour les écrans mobiles */
+@media (max-width: 800px) {
+	.main-content {
+		flex-direction: column;
+		gap: 15px;
+		align-items: center;
+		width: 100%;
+		overflow-x: hidden;
+	}
+
+	aside,
+	section {
+		width: 100%;
+	}
+
+	/* Center ul in the container */
+	ul {
+		width: 100%; /* Ensure ul takes full width */
+		padding-left: 0;
+		margin: 0 auto;
+		text-align: center; /* Center text inside ul */
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	/* Center li in responsive mode */
+	li {
+		width: auto;
+		display: flex;
+		justify-content: center;
+		text-align: center;
+	}
+}
+
+/* Animations */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes slideInFromTop {
+	from {
+		transform: translateY(-100%);
+	}
+	to {
+		transform: translateY(0);
+	}
+}
+
+.fade-in {
+	animation: fadeIn 2s ease-in-out;
 }
