@@ -3,11 +3,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	const formations = [
 		{ id: 'ssiap2-juin', dateFin: new Date('2024-06-14') },
-		{ id: 'garde-juin', dateFin: new Date('2024-06-29') },
+		{ id: 'garde-juin1', dateFin: new Date('2024-06-29') },
 		{ id: 'pack-aout', dateFin: new Date('2024-08-30') },
+		{ id: 'garde-aout', dateFin: new Date('2024-08-23') },
 		{ id: 'elec-sept1', dateFin: new Date('2024-09-04') },
 		{ id: 'sst-sept', dateFin: new Date('2024-09-06') },
-		{ id: 'aps-sept-oct', dateFin: new Date('2024-10-11') },
+		{ id: 'aps-sept-oct', dateFin: new Date('2024-11-08') },
 		{ id: 'ssiap1-oct', dateFin: new Date('2024-10-18') },
 		{ id: 'elec-oct', dateFin: new Date('2024-10-29') },
 		{ id: 'sst-oct', dateFin: new Date('2024-10-31') },
