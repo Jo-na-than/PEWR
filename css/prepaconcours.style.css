@@ -188,19 +188,24 @@ ul.dynamic-list li::before {
 	color: #ffffff;
 }
 
-.optimized-section .image-grid {
-	display: flex;
-	justify-content: center; /* Centrer les images */
-	flex-wrap: wrap;
-	gap: 20px;
-	width: 100%; /* Ajustement de la largeur */
+/* Uniformisation de la taille des images pour toutes les sections */
+.optimized-section .image-grid,
+.content-section .image-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
 }
 
-.optimized-section .image-small {
-	max-width: 200px; /* Ajustement de la largeur pour que les images soient plus grandes */
-	height: auto;
-	border-radius: 10px;
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+/* Uniformisation de la taille des images dans toutes les sections */
+.optimized-section .image-small,
+.content-section .image-small {
+    width: 200px;  /* Largeur uniforme pour toutes les images */
+    height: 150px; /* Hauteur pour uniformiser la présentation */
+    object-fit: cover;  /* Assure que les images remplissent bien l'espace sans être déformées */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Ajout de styles pour l'image de la troisième section */
