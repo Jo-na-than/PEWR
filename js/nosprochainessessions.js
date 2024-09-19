@@ -12,10 +12,14 @@ document.addEventListener('DOMContentLoaded', function () {
 		{ id: 'ssiap1-oct', dateFin: new Date('2024-10-18') },
 		{ id: 'elec-oct', dateFin: new Date('2024-10-29') },
 		{ id: 'sst-oct', dateFin: new Date('2024-10-31') },
+		{ id: 'ssiap1-nov', dateFin: new Date('2024-11-18') },
 		{ id: 'ssiap2-nov1', dateFin: new Date('2024-11-15') },
+		{ id: 'garde-nov', dateFin: new Date('2024-11-22') },
 		{ id: 'elec-nov', dateFin: new Date('2024-11-13') },
 		{ id: 'sst-nov', dateFin: new Date('2024-11-15') },
+		{ id: 'ssiap1-dec', dateFin: new Date('2024-12-16') },
 		{ id: 'aps-nov-dec', dateFin: new Date('2024-12-20') },
+		{ id: 'garde-dec', dateFin: new Date('2024-12-20') },
 	];
 
 	formations.forEach((formation) => {
