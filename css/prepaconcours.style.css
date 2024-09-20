@@ -1,3 +1,62 @@
+/* Définition de l'animation fadeIn */
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+/* Animation de slideInFromTop pour le header */
+@keyframes slideInFromTop {
+	from {
+		transform: translateY(-100%);
+	}
+	to {
+		transform: translateY(0);
+	}
+}
+
+/* Animation bounceIn pour le logo */
+@keyframes bounceIn {
+	0%,
+	20%,
+	40%,
+	60%,
+	80%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-20px);
+	}
+}
+
+/* Animation fadeInUp */
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Animation fadeInCategory pour les catégories */
+@keyframes fadeInCategory {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
 /* Styles généraux pour le corps de la page */
 body {
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -8,6 +67,11 @@ body {
 	padding: 0;
 	line-height: 1.6;
 	overflow-x: hidden;
+	animation: fadeIn 1.5s ease-in-out; /* Animation ajoutée pour l'apparition de la page */
+	display: flex;
+	flex-direction: column;
+	align-items: center; /* Centrage du contenu principal */
+	justify-content: center;
 }
 
 /* Styles pour le header */
@@ -19,11 +83,13 @@ header {
 	width: 100%;
 	background-color: #1f1f1f;
 	padding: 15px 0;
+	animation: slideInFromTop 1s ease-out; /* Animation pour le header */
 }
 
 header .logo {
 	width: 150px;
 	margin-bottom: 10px;
+	animation: bounceIn 2s ease-in-out; /* Animation pour le logo */
 }
 
 header h1 {
@@ -38,6 +104,7 @@ nav {
 	text-align: center;
 	padding: 10px 0;
 	width: 100%;
+	animation: fadeIn 2s ease-in-out; /* Animation pour la navigation */
 }
 
 nav a {
@@ -60,13 +127,16 @@ nav a:hover {
 	flex-direction: column;
 	gap: 20px;
 	padding: 20px;
-	align-items: stretch;
+	align-items: center; /* Centre le contenu principal */
+	justify-content: center; /* Alignement centré */
 	width: 100%;
 	box-sizing: border-box;
 }
 
 /* Styles pour les sections de contenu */
-.content-section {
+.content-section,
+aside,
+section {
 	background-color: #1f1f1f;
 	padding: 20px;
 	border-radius: 10px;
@@ -77,7 +147,7 @@ nav a:hover {
 	align-items: center;
 	width: 100%;
 	box-sizing: border-box;
-	animation: fadeIn 2s ease-in-out;
+	animation: fadeIn 2s ease-in-out; /* Animation appliquée */
 	text-align: center;
 }
 
@@ -92,6 +162,7 @@ nav a:hover {
 .text-content {
 	flex: 1;
 	width: 100%;
+	text-align: center; /* Centrage du texte */
 }
 
 ul {
@@ -102,6 +173,7 @@ ul {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+	justify-content: center; /* Centrer les éléments de la liste */
 	width: 100%;
 }
 
@@ -191,21 +263,21 @@ ul.dynamic-list li::before {
 /* Uniformisation de la taille des images pour toutes les sections */
 .optimized-section .image-grid,
 .content-section .image-grid {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    width: 100%;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 20px;
+	width: 100%;
 }
 
 /* Uniformisation de la taille des images dans toutes les sections */
 .optimized-section .image-small,
 .content-section .image-small {
-    width: 200px;  /* Largeur uniforme pour toutes les images */
-    height: 150px; /* Hauteur pour uniformiser la présentation */
-    object-fit: cover;  /* Assure que les images remplissent bien l'espace sans être déformées */
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	width: 200px; /* Largeur uniforme pour toutes les images */
+	height: 150px; /* Hauteur pour uniformiser la présentation */
+	object-fit: cover; /* Assure que les images remplissent bien l'espace sans être déformées */
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Ajout de styles pour l'image de la troisième section */
@@ -228,6 +300,28 @@ ul.dynamic-list li::before {
 	text-align: center;
 }
 
+/* Ajout d'animation fadeInUp pour les fiches */
+.fiche {
+	opacity: 0;
+	animation: fadeInUp 1s ease-in forwards;
+	display: flex;
+	align-items: center;
+	background-color: #333333;
+	color: #ffffff;
+	width: calc(33.333% - 15px);
+	margin: 7px;
+	padding: 15px;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.fiche:hover {
+	transform: scale(1.05);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	background-color: #444444;
+	cursor: pointer;
+}
+
 /* Adaptation pour les écrans mobiles */
 @media (max-width: 800px) {
 	.tags-list {
@@ -246,8 +340,11 @@ ul.dynamic-list li::before {
 		overflow-x: hidden;
 	}
 
-	.content-section {
+	.content-section,
+	aside,
+	section {
 		width: 100%;
+		align-items: center;
 	}
 
 	ul {
@@ -257,19 +354,20 @@ ul.dynamic-list li::before {
 		text-align: left;
 		display: flex;
 		flex-direction: column;
-		align-items: flex-start;
+		align-items: center; /* Centre les éléments de la liste en responsive */
 	}
 
 	li {
 		width: auto;
 		display: flex;
-		justify-content: flex-start;
-		text-align: left;
+		justify-content: center; /* Centre chaque élément de la liste */
+		text-align: center;
 	}
 
 	.image-grid {
 		flex-direction: column;
 		width: 100%;
+		align-items: center; /* Centre les images */
 	}
 
 	.image-small {
